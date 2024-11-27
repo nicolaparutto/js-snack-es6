@@ -79,7 +79,7 @@ const arrayPointsFouls = [];
 for(let i = 0; i < footballTeam.length; i++){
    const squadPoints = `Squadra: ${footballTeam[i].name}`;
    const squadFouls = `Totale falli: ${footballTeam[i].fouls}`;
-   arrayPointsFouls.push(squadPoints, squadFouls);
+   arrayPointsFouls.push({squadPoints, squadFouls});
 };
 
 console.log(arrayPointsFouls);
