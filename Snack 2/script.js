@@ -6,6 +6,7 @@ Creare un array di oggetti di squadre di calcio.
 - Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
+//creo l'array di oggetti:
 const footballTeam = [
    {
       name: 'Real Madrid', 
@@ -63,24 +64,30 @@ const footballTeam = [
       fouls: 0
    },
 ];
-console.log(footballTeam)
+
 //creo una funzione che genera un numero random:
 function randomNumber (max, min){
    return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
 //assegno i numeri casuali ai valori, delle proprietà, degli oggetti dell'array:
-footballTeam.forEach(squad => {
+for (let squad of footballTeam){
    squad.points = randomNumber(1,10);
    squad.fouls = randomNumber(1,10);
-});
+}
 
 //seleziono solo le proprietà richieste e le salvo in un array:
-const arrayPointsFouls = [];
-for(let i = 0; i < footballTeam.length; i++){
-   const squadPoints = `Squadra: ${footballTeam[i].name}`;
-   const squadFouls = `Totale falli: ${footballTeam[i].fouls}`;
-   arrayPointsFouls.push({squadPoints, squadFouls});
+const arrayNamesFouls = [];
+
+for(let squad of footballTeam){
+   const squadNamesFouls = {
+      name: squad.name,
+      fouls: squad.fouls
+   }
+   arrayNamesFouls.push(squadNamesFouls)
 };
 
-console.log(arrayPointsFouls);
+//stampo in console:
+console.log(arrayNamesFouls);
+
 
