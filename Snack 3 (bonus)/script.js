@@ -5,8 +5,13 @@
 
 
 const casualArray = ['giallo', 'rosso', 'verde', 'nero', 'blu', 'arancione'];
-const numA = 2;
-const numB = 5;
+const num1 = 2;
+const num2 = 5;
 
-const arrayGetted = (casualArray, num1, num2) => casualArray.slice(numA, numB);
-console.log(arrayGetted(casualArray));
+function filterArray (array, numA, numB){
+   const newArray = array.slice(numA, numB);
+   return newArray;
+}
+
+console.log(filterArray(casualArray, num1, num2))
+
